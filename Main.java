@@ -64,7 +64,7 @@ public class Main extends JavaPlugin implements Listener {
    public void onJump(PlayerMoveEvent event) {
 	  Player player = (Player) event.getPlayer();
 	  Location loc = player.getLocation();
-	  String pula = "§4§lYou went up a level.";
+	  String goUpLevel = "§4§lYou went up a level.";
       double x = loc.getX();
       double y = loc.getY();
       double z = loc.getZ();
@@ -77,9 +77,9 @@ public class Main extends JavaPlugin implements Listener {
 		  for(double i = y; i <= y+9; i++)
 		  {
 			  if(world.getBlockAt((int)x,(int)i,(int)z).getType() == Material.REDSTONE_BLOCK && world.getBlockAt((int)x,(int)i+1,(int)z).getType() == Material.IRON_BLOCK) {
-				  Location penis = new Location(player.getWorld(), x, i+2 , z, yawInt, pitchInt);
-				  player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(pula));
-				  player.teleport(penis);			  
+				  Location goUp = new Location(player.getWorld(), x, i+2 , z, yawInt, pitchInt);
+				  player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(goUpLevel));
+				  player.teleport(goUp);			  
 				  }
 		  }
 	  }
@@ -88,7 +88,7 @@ public class Main extends JavaPlugin implements Listener {
    public void onSneak(PlayerToggleSneakEvent event) {
 	  Player player = (Player) event.getPlayer();
 	  Location loc = player.getLocation();
-	  String pula = "§4§lYou went down a level.";
+	  String goDownLevel = "§4§lYou went down a level.";
       double x = loc.getX();
       double y = loc.getY();
       double z = loc.getZ();
@@ -101,9 +101,9 @@ public class Main extends JavaPlugin implements Listener {
 		  for(double i = y-3; i >= y-13; i--)
 		  {
 			  if(world.getBlockAt((int)x,(int)i,(int)z).getType() == Material.REDSTONE_BLOCK && world.getBlockAt((int)x,(int)i+1,(int)z).getType() == Material.IRON_BLOCK) {
-				  Location penis = new Location(player.getWorld(), x, i+2, z, yawInt, pitchInt);
-				  player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(pula));
-				  player.teleport(penis);
+				  Location goDown = new Location(player.getWorld(), x, i+2, z, yawInt, pitchInt);
+				  player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(goDownLevel));
+				  player.teleport(goDown);
 				  }
 		  }
 	  }
